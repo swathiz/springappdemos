@@ -16,4 +16,6 @@ public class ShoppingCart {
 		return "ShoppingCart [item=" + item + "]";
 	}
 	
+	//this is a example of object reference
+	//in this method we can reference the item object seperately but in inner bean we cant access the class seperately
 }

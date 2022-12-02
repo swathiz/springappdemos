@@ -1,12 +1,15 @@
 package com.samples.S01springcoredi;
 
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+//dependency injection enables loose coupling
 public class App 
 {
     public static void main( String[] args )
     {
-       ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
+       
+    	// create the spring container
+//    	ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
        
 //       Employee emp = (Employee) springContainer.getBean("emp"); 
 //       System.out.println(emp);
@@ -23,10 +26,25 @@ public class App
 //       CarDealer dealer = (CarDealer) springContainer.getBean("cardealer");
 //       System.out.println(dealer);
        
-       Customer customer = (Customer) springContainer.getBean("customer");
-       System.out.println(customer);
-       
-       ShoppingCart sc = (ShoppingCart) springContainer.getBean("shoppingcart");
-       System.out.println(sc);
+//       Customer customer = (Customer) springContainer.getBean("customer");
+//       System.out.println(customer);
+    	
+//    	CountriesAndLanguages countries = (CountriesAndLanguages) springContainer.getBean("countries");
+//    	System.out.println(countries);
+    	
+//    	Student student = (Student) springContainer.getBean("student");
+//    	System.out.println(student);
+    	
+    	// to call the registerShutdownHook() we need the springcontainer to be of type AbstractApplicationContext?
+//    	AbstractApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");
+//    	Patient patient = (Patient) springContainer.getBean("patient");
+//    	System.out.println(patient);
+//    	springContainer.registerShutdownHook();// to call the destroy method
+    	
+    	
+    	//Inner bean example
+    	 	ClassPathXmlApplicationContext springContainer = new ClassPathXmlApplicationContext("com/samples/S01springcoredi/SpringConfig.xml");       
+      Employee emp = (Employee) springContainer.getBean("emp"); 
+      System.out.println(emp);
     }
 }

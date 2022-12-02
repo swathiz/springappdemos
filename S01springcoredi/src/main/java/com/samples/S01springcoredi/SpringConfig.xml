@@ -17,8 +17,16 @@
 		</property>
 	</bean>-->
 
-	<bean name="emp" class="com.samples.S01springcoredi.Employee"
-		p:id="22" p:name="williams" />
+<!-- 	<bean name="emp" class="com.samples.S01springcoredi.Employee"
+		p:id="22" p:name="williams" />-->
+		
+		<bean name="emp" class="com.samples.S01springcoredi.Employee"
+		p:id="22" p:name="John">
+		<property name="address">
+			<bean class="com.samples.S01springcoredi.Address"
+				p:houseNumber="123" p:street="main street" p:city="NY" />
+		</property>
+	</bean>
 
 	<bean name="hospital" class="com.samples.S01springcoredi.Hospital">
 		<property name="name" value="Global Hospitals" />
@@ -56,4 +64,15 @@
 	
 	<bean name="item" class="com.samples.S01springcoredi.Item" p:id="1" p:name="paint" p:price="2000" p:quantity="10"/>
 	<bean name="shoppingcart" class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="item"/>
+	
+	<!-- <bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11" init-method="methodOne" destroy-method="methodTwo" />-->
+		
+		
+		<bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11"  />
+		<!-- the below line is used to call the methods and variables with postConstruct and predestroy annotations -->
+		<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+		
+		
 </beans>
